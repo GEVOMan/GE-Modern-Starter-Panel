@@ -1,0 +1,515 @@
+@name GE Modern Starter Panel
+@inputs Startup1 Shutdown1 Isolation1 WindowHeater RoadCrossingLights AirConditioner Radio GeneratorField Utilities Hdlts FuelPump LocalControl LebComputer
+@outputs StartupOut ShutdownOut IsolationOut
+
+#made by 24!!
+
+#for use in modern GE locomotives equipped with autostart (AC4400CW, Evolution Series, etc.)
+
+if(first()|dupefinished()){
+
+entity():setMaterial("models/proppertextures/invisible")
+
+A = 0
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(-12.7,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 1
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(-7.7,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 2
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(-5.7,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 3
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(-0.7,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 4
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(1.4,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 5
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_0/rect_1_5x18.mdl")
+holoPos(A,entity():toWorld(vec(6.4,0,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 6
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_1/rect_3x3.mdl")
+holoPos(A,entity():toWorld(vec(10.5,-6,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoScale(A,vec(1.4,1.9,1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 7
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_1/rect_3x3.mdl")
+holoPos(A,entity():toWorld(vec(10.5,-1.2,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoScale(A,vec(1.4,1.9,1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+A = 8
+holoCreate(A)
+holoModel(A,"models/sprops/rectangles_superthin/size_1/rect_3x3.mdl")
+holoPos(A,entity():toWorld(vec(10.5,3,-0.4)))
+holoAng(A,entity():toWorld(ang(0,90,0)))
+holoScale(A,vec(1,1.9,1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"models/proppertextures/aluminum")
+
+#--------Start/Stop/Isolation Decals--------
+
+A = 9
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(10.5,-6,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.6))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/ge_junk/ge_ec_switch")
+
+A = 10
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(10.5,-1.2,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.6))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/ge_junk/ge_hdlt_setup")
+
+A = 11
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(9.2,3,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.18))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"basic_lables/ge_engine_start")
+
+A = 12
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(11.7,3,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.18))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"basic_lables/ge_engine_stop")
+
+#--------Buttons/Switches--------
+
+A = 13
+holoCreate(A)
+holoModel(A,"models/monkcabdetailpack/misc/pushbutton.mdl")
+holoPos(A,entity():toWorld(vec(9.3,3,-0.5)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.8))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 14
+holoCreate(A)
+holoModel(A,"models/monkcabdetailpack/misc/pushbutton.mdl")
+holoPos(A,entity():toWorld(vec(11.8,3,-0.5)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.8))
+holoColor(A,vec(150,0,0))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 15
+holoCreate(A)
+holoModel(A,"models/jazzie/trains/locomotives/emd/cab/control_panel_switch1.mdl")
+holoPos(A,entity():toWorld(vec(9.93,-6,-0.1)))
+holoScale(A,vec(0.7))
+holoColor(A,vec(150,0,0))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 16
+holoCreate(A)
+holoModel(A,"models/jazzie/trains/locomotives/emd/cab/control_panel_switch1.mdl")
+holoPos(A,entity():toWorld(vec(9.93,-1.2,-0.1)))
+holoAng(A,entity():toWorld(ang(0,-90,0)))
+holoScale(A,vec(0.7))
+holoColor(A,vec(150,0,0))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+#--------Breakers--------
+
+A = 17
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-10.3,-3.5,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 18
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-10.3,0,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 19
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-10.3,3.5,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 20
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-10.3,7,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 21
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-3.3,0,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 22
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-3.3,3.5,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 23
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(-3.3,7,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 24
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(3.8,-3.5,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/plastic_black")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/plastic_black")
+
+A = 25
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(3.8,-2,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/plastic_black")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/plastic_black")
+
+A = 26
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(3.8,3.5,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoBodygroup(A,1,1)
+holoBodygroup(A,2,2)
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 27
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(3.8,0,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+A = 28
+holoCreate(A)
+holoModel(A,"models/titus's_propper_model_pack_2.4/propper/circuitbreakers/breaker_dual.mdl")
+holoPos(A,entity():toWorld(vec(3.8,7,-0.5)))
+holoAng(A,entity():toWorld(ang(0,-90,90)))
+holoScale(A,vec(1))
+holoColor(A,vec(255))
+holoParent(A,entity())
+holoMaterial(A,"")
+
+#--------Breaker Labels--------
+
+A = 29
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-7.7,-3.5,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.2))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/window_heater")
+
+A = 30
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-7.7,0,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.3))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/road_crossing_lights")
+
+A = 31
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-7.7,3.5,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.3))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/air_conditioner")
+
+A = 32
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-7.7,7,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.2))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/radio")
+
+A = 33
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-0.7,0,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.3))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/generator_field")
+
+A = 34
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-0.7,3.5,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.2))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/utilities")
+
+A = 35
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(-0.7,7,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.2))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/hdlts")
+
+A = 36
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(6.4,-3.5,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.08))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/fuel_pump")
+
+A = 37
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(6.4,0,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.15))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/local_control")
+
+A = 38
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(6.4,3.5,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.3))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/auto_drain_timer")
+
+A = 39
+holoCreate(A)
+holoModel(A,"plane")
+holoPos(A,entity():toWorld(vec(6.4,7,-0.1)))
+holoAng(A,entity():toWorld(ang(0,0,0)))
+holoScale(A,vec(0.15))
+holoColor(A,vec(0))
+holoParent(A,entity())
+holoMaterial(A,"cubics_pack/breakers/leb_computer")
+}
+
+#--------Breaker script--------
+
+if(WindowHeater == 1){
+holoBodygroup(17,1,1)
+}else{
+holoBodygroup(17,1,0)
+}
+
+if(RoadCrossingLights == 1){
+holoBodygroup(18,1,1)
+}else{
+holoBodygroup(18,1,0)
+}
+
+if(AirConditioner == 1){
+holoBodygroup(19,1,1)
+}else{
+holoBodygroup(19,1,0)
+}
+
+if(Radio == 1){
+holoBodygroup(20,1,1)
+}else{
+holoBodygroup(20,1,0)
+}
+
+if(GeneratorField == 1){
+holoBodygroup(21,1,1)
+}else{
+holoBodygroup(21,1,0)
+}
+
+if(Utilities == 1){
+holoBodygroup(22,1,1)
+}else{
+holoBodygroup(22,1,0)
+}
+
+if(Hdlts == 1){
+holoBodygroup(23,1,1)
+}else{
+holoBodygroup(23,1,0)
+}
+
+if(FuelPump == 1){
+holoBodygroup(24,1,1)
+holoBodygroup(25,1,1)
+}else{
+holoBodygroup(24,1,0)
+holoBodygroup(25,1,0)
+}
+
+if(LocalControl == 1){
+holoBodygroup(27,1,1)
+}else{
+holoBodygroup(27,1,0)
+}
+
+if(LebComputer == 1){
+holoBodygroup(28,1,1)
+}else{
+holoBodygroup(28,1,0)
+}
+
+#--------Start/Stop/Isolation Switch Script--------
+
+if(Startup1 == 1){
+holoBodygroup(13,1,2)
+}elseif(Startup1 == 0){
+holoBodygroup(13,1,0)
+}
+
+if(Shutdown1 == 1){
+holoBodygroup(14,1,2)
+}elseif(Shutdown1 == 0){
+holoBodygroup(14,1,0)
+}
+
+if(Isolation1 == 1){
+holoAng(15,entity():toWorld(ang(0,-90,0)))
+}elseif(Isolation1 == 0){
+holoAng(15,entity():toWorld(ang(0,0,0)))
+}
+
+#--------Start/Stop/Isolation Script--------
+
+if(FuelPump & Startup1 == 1){
+StartupOut=1
+}else{
+StartupOut=0
+}
+
+if(Shutdown1 == 1){
+ShutdownOut=1
+}else{
+ShutdownOut=0
+}
+
+if(LocalControl & Isolation1 == 1){
+IsolationOut=1
+}else{
+IsolationOut=0
+}
